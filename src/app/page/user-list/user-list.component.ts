@@ -28,6 +28,14 @@ export class UserListComponent implements OnInit {
     this.userService.remove(user);
   }
 
+  onUpdate(user: User): void {
+
+    if (user.id === 0) {
+      this.userService.create(user);
+    }
+    this.userService.update(user);
+  }
+
   phrase: string = '';
 
   searchEvent(event: Event): void {
