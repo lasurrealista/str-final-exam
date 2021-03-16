@@ -15,16 +15,16 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Address</th>
-          <th>Active</th>
+          <th (click)="onColumnSelect('id')"># <i class="fa fa-sort-numeric-asc"></i></th>
+          <th (click)="onColumnSelect('name')">Name <i class="fa fa-sort-alpha-asc"></i></th>
+          <th (click)="onColumnSelect('email')">Email <i class="fa fa-sort-alpha-asc"></i></th>
+          <th (click)="onColumnSelect('address')">Address <i class="fa fa-sort-alpha-asc"></i></th>
+          <th (click)="onColumnSelect('active')">Active <i class="fa fa-sort-alpha-asc"></i></th>
           <th></th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let user of users$ | async | filterByName: phrase ">
+        <tr *ngFor="let user of users$ | async | filterByName: phrase | sorter:columnKey">
           <td>{{ user.id }}</td>
           <td>{{ user.name }}</td>
           <td>{{ user.email }}</td>

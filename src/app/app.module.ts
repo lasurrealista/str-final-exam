@@ -9,6 +9,7 @@ import { NavbarComponent } from './common/navbar/navbar.component';
 import { UserListComponent } from './page/user-list/user-list.component';
 import { UserEditorComponent } from './page/user-editor/user-editor.component';
 import { FilterByNamePipe } from './pipe/filter-by-name.pipe';
+import { SorterPipe } from './pipe/sorter.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FilterByNamePipe } from './pipe/filter-by-name.pipe';
     NavbarComponent,
     UserListComponent,
     UserEditorComponent,
-    FilterByNamePipe
+    FilterByNamePipe,
+    SorterPipe
   ],
   imports: [
     BrowserModule,

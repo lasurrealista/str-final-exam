@@ -33,4 +33,11 @@ export class UserListComponent implements OnInit {
   searchEvent(event: Event): void {
     this.phrase = (event.target as HTMLInputElement).value;
   }
+
+  columnKey: string = '';
+
+  onColumnSelect(key: string): void {
+    this.columnKey = key;
+  }
+
 }
