@@ -1,5 +1,16 @@
 <div class="row">
   <div class="col-12 mt-2">
+
+    <div class="col-12 mt-4">
+      <div class="container d-flex justify-content-center">
+        <form class="form-inline my-2 my-lg-0 py-2 d-flex justify-content-center">
+          <input (keyup)="searchEvent($event)" class="search-input form-control mr-sm-2" type="text"
+            placeholder="Search">
+          <button class="btn btn-success my-2 my-sm-0" type="submit">Search by Name</button>
+        </form>
+      </div>
+    </div>
+
     <h2>User List</h2>
     <table class="table table-striped">
       <thead>
@@ -13,7 +24,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let user of users$ | async">
+        <tr *ngFor="let user of users$ | async | filterByName: phrase ">
           <td>{{ user.id }}</td>
           <td>{{ user.name }}</td>
           <td>{{ user.email }}</td>

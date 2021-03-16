@@ -27,4 +27,10 @@ export class UserListComponent implements OnInit {
       )
     this.userService.remove(user);
   }
+
+  phrase: string = '';
+
+  searchEvent(event: Event): void {
+    this.phrase = (event.target as HTMLInputElement).value;
+  }
 }
