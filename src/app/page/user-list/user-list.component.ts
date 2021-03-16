@@ -22,6 +22,9 @@ export class UserListComponent implements OnInit {
   }
 
   onDelete(user: User): void {
+    if (
+      confirm(`Click 'OK' to verify that you want to delete this user.`)
+      )
     this.userService.remove(user);
   }
 }
